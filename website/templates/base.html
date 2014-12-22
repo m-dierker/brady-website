@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="begin blog baby?">
+
+    {% if title %}
+    <title>{{ title }} - SalzTech</title>
+    
+    {% else %}
+    <title>SalzTech</title>
+
+    {% endif %}
+    
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+        
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/blog-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/blog.css') }}">
+    <!--<![endif]-->
+
+    <!-- include jQuery -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+    <!-- include Cycle -->
+    <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.slideshow').cycle({
+                fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+                speed: 350
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title">Salz</h1>
+            <h1 class="brand-title">Tech</h1>
+            <h2 class="brand-tagline">Solder</h2>
+            <h2 class="brand-tagline">+</h2>
+            <h2 class="brand-tagline">SPICE</h2>
+            <h2 class="brand-tagline">+</h2>
+            <h2 class="brand-tagline">Everything Nice</h2>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="{{ url_for('about') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="{{ url_for('about')}}">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4" style="background:white">
+
+        {% block content %} {% endblock %}
+        
+        <div class="footer">
+            <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                <ul>
+                    <li><a href="http://twitter.com/brady_salz/">Twitter</a></li>
+                    <li><a href="http://facebook.com/brady.salz">Facebook</a></li>
+                    <li><a href="mailto:brady.salz@gmail.com">Email</a></li>
+                </ul>
+            </div>
+                Made with <a href="http://flask.pocoo.org">Flask</a> and <a href="http://purescss.io">PureCSS</a>
+                <br>
+                &copy; Braedon Salz
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+TODO
+=====
+
+- Add colors for Categories
+
+- Make topics list
+
+- See if a free SPICE sim exists
+
+- Make home page template with last X posts 
+	- most recent 3 to 5 posts
+	- need to limit each to a certain character count (aka don't lead with a picture)
+	- need new template for post snippet? or will post template do with passing less data...
+
+- Add Categories pages storing list of posts with that category
+
+- Add comment section
+	- will extend individual blog page template 
+
+
+
+DONE
+====
+- (12/22) Learn SchemDraw better, perhaps output to SVG instead of PNG? 
+- (12/22) Make generic post page template
+- (12/22) - Add categories [passive, active, rf, ms, power, digital]
