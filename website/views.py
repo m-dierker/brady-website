@@ -1,6 +1,7 @@
 from website import app
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from models import *
+import os
 
 # don't use models.Post, use Post
 # don't forget to check permissions
@@ -19,11 +20,9 @@ def about():
 def post():
 	cat = Category.query.all()
 	cat = cat[0]
-	testPost = Post(title='Example Title', body='''this is just another sentence
-		this is just another sentence
-		this is just another sentence
-		this is just another sentence
-		''', category=cat)
+	bodypath = ("/home/brady/website/website/posts/resistor-divider.html")
+	postbody = open(bodypath, 'r').read()
+	testPost = Post(title='Example Title', body=postbody, category=cat)
 	return render_template('post.html', post=testPost, title=testPost.title)
 
 @app.route('/shivani')

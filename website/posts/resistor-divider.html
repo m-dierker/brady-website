@@ -1,0 +1,10 @@
+The resistor divider is the most basic circuit we can utilize. It consists solely of two resistors and some kind of source, be it voltage or current. One of the most common problems when designing a circuit is getting an exact voltage reference available in a certain spot. Using basic properities of Ohm's Law, we can derive some equations to convert this simple set-up into an amazingly-inefficient "buck converter" - a circuit that translates from one voltage level <b>down</b> to another one. The down part is important, with a resistor divider, you can not "up" a voltage level, only lower it. 
+
+<img class="post-image" src="{{ url_for('static', filename = 'images/resistor-divider.svg') }}">
+<img src="{{ url_for('static', filename = 'images/resistor-divider.svg') }}">
+<img alt="OSHW" height="25" width="25" src="{{ url_for('static', filename = 'images/oshw-logo.png') }}">
+
+The only thing that's interesting about this circuit is the midpoint - so let's calculate Vout. Using Ohm's Law: 
+$$V = IR$$ 
+We can calculate the current as:
+$$I_{out} = \dfrac{V}{R1+R2}$$

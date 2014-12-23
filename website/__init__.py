@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask('website')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/brady/website/website/blog.db'
 db = SQLAlchemy(app)
