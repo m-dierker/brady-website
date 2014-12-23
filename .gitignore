@@ -1,2 +1,7 @@
 # no need for pyc probably
 *.pyc
+
+# no need for private info
+access.log
+error.log
+

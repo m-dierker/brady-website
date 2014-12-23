@@ -311,3 +311,8 @@
 24.34.108.101 - - [22/Dec/2014:17:05:44 -0500] "GET /favicon.ico HTTP/1.1" 404 429 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
 123.151.149.222 - - [22/Dec/2014:18:51:06 -0500] "GET http://www.baidu.com/ HTTP/1.1" 200 4869 "-" "-"
 190.221.1.136 - - [22/Dec/2014:18:54:38 -0500] "GET /manager/html HTTP/1.1" 404 429 "-" "Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0"
+24.34.108.101 - - [22/Dec/2014:19:03:23 -0500] "GET / HTTP/1.1" 200 2130 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+24.34.108.101 - - [22/Dec/2014:19:03:23 -0500] "GET /static/images/oshw-logo.png HTTP/1.1" 304 181 "http://bradysalz.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+24.34.108.101 - - [22/Dec/2014:19:03:23 -0500] "GET /static/css/blog.css HTTP/1.1" 200 1424 "http://bradysalz.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+24.34.108.101 - - [22/Dec/2014:19:03:23 -0500] "GET /static/images/pcb_green_hires.png HTTP/1.1" 304 180 "http://bradysalz.com/static/css/blog.css" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+157.55.39.197 - - [22/Dec/2014:19:39:44 -0500] "GET / HTTP/1.1" 200 2130 "-" "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
