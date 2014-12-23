@@ -5,3 +5,5 @@
 access.log
 error.log
 
+# no need for venv 
+venv/
