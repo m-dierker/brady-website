@@ -1,6 +1,8 @@
 TODO
 =====
 
+- Finish add post script
+
 - Add colors for Categories
 
 - Make topics list
@@ -16,7 +18,6 @@ TODO
 
 - Add comment section
 	- will extend individual blog page template 
-
 
 
 DONE

@@ -1,5 +1,5 @@
 from website import app
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, render_template_string
 from models import *
 import os
 
@@ -22,8 +22,9 @@ def post():
 	cat = cat[0]
 	bodypath = ("/home/brady/website/website/posts/resistor-divider.html")
 	postbody = open(bodypath, 'r').read()
-	testPost = Post(title='Example Title', body=postbody, category=cat)
-	return render_template('post.html', post=testPost, title=testPost.title)
+	testPost = Post(title='Resistor Divider', body=postbody, category=cat)
+	postbody = render_template_string(postbody)
+	return render_template('post.html', post=testPost, body=postbody, title=testPost.title)
 
 @app.route('/shivani')
 def shivani():
