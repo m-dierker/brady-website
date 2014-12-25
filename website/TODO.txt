@@ -1,13 +1,15 @@
 TODO
 =====
 
+- Write ngspice parser 
+
+- Write plotting script with D3/bokeh
+
 - Finish add post script
 
 - Add colors for Categories
 
 - Make topics list
-
-- See if a free SPICE sim exists
 
 - Make home page template with last X posts 
 	- most recent 3 to 5 posts
@@ -24,4 +26,5 @@ DONE
 ====
 - (12/22) Learn SchemDraw better, perhaps output to SVG instead of PNG? 
 - (12/22) Make generic post page template
-- (12/22) - Add categories [passive, active, rf, ms, power, digital]
+- (12/22) Add categories [passive, active, rf, ms, power, digital]
+- (12/23) See if a free SPICE sim exists

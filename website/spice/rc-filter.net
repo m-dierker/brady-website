@@ -4,9 +4,7 @@ C1 n1 0 1nF
 Vin n0 0 AC 1v DC 1v pulse 0 5V 1s 1s 1s 5s 12s
 
 .AC DEC 10 1 1E5
-.tran 1s 13s
-.PLOT ac v(n1)
-.PLOT tran v(n1)
-.PRINT v(n0) v(n1)
-.SAVE v(n0) v(n1)
+.tran 1s 10s
+.print tran v(n1)
+.print ac v(n1) db(v(n1))
 .END
