@@ -6,9 +6,9 @@ def find_analysis(dataFile, lineCount=0):
 	# locate start of sim block
 	# <Type> Analysis <time>
 	i = lineCount
-	while 'Analysis' not in spiceData[i]:
+	while 'Analysis' not in dataFile[i]:
 		i += 1
-		if i >= len(spiceData):
+		if i >= len(dataFile):
 			sys.exit('File finished parsing\n')
 		
 	return i
@@ -23,67 +23,67 @@ def parse_time(timeLine):
 	stamp.append(timeLine[8][:-1]) #Year XXXX
 	return stamp
 
-fileName = argv[1]
-fileNameNoExt = fileName.rsplit('.')[0]
+def parse_spice(fileName):
+	fileNameNoExt = fileName.rsplit('.')[0]
 
 
-spiceData = open(fileName).readlines()
-lineCount = 0
-fileCount = 0
+	spiceData = open(fileName).readlines()
+	lineCount = 0
+	fileCount = 0
 
-while True:
-	lineCount = find_analysis(spiceData, lineCount+1)
-	analysis = spiceData[lineCount].lstrip().split(' ')[0]
+	while True:
+		lineCount = find_analysis(spiceData, lineCount+1)
+		analysis = spiceData[lineCount].lstrip().split(' ')[0]
 
-	timeStamp = parse_time(spiceData[lineCount].lstrip().split(' '))
+		timeStamp = parse_time(spiceData[lineCount].lstrip().split(' '))
 
-	print '%s Analysis starts at line %d' % (analysis, lineCount)
-	
-	if analysis == 'AC':
-		idx = 'frequency'
-
-	if analysis == 'Transient':
-		idx = 'time'
-	
-	# continue reading until find header line
-	# necessary for when people use .plot or other sim options
-	
-	while idx not in spiceData[lineCount]:
-		lineCount += 1
-
-	cols = spiceData[lineCount].split(' ')
-	cols = filter(None, cols)
-	print cols
-	startCol = cols.index(idx)
-
-	# add two more at end to increment and handle --- line
-	lineCount += 2
-
-	outputFile = open(fileNameNoExt+'-'+str(fileCount)+'.csv','wb')
-
-	outCSV = csv.writer(outputFile, delimiter=',')
-
-	invalidWords = set(['spice', 'elapsed'])
-
-	while not set(spiceData[lineCount].lstrip().split(' ')).intersection(invalidWords):
-		currLine = spiceData[lineCount].lstrip().split('\t')
-		currLine = filter(None, currLine)
-
-
-		if idx in spiceData[lineCount].lstrip().split(' '):
-			lineCount += 1
-			# print 'Skipped line %d due to idx' % lineCount
-			continue
-
-		try:
-			currLine = map(float, currLine[startCol:-1]) 
-		except ValueError:
-			currLine = [s.strip(',') for s in currLine]
-			currLine = map(float, currLine[startCol:-1]) 
-
+		print '%s Analysis starts at line %d' % (analysis, lineCount)
 		
-		outCSV.writerow(currLine)
-		lineCount += 1
+		if analysis == 'AC':
+			idx = 'frequency'
 
-	outputFile.close()
-	fileCount += 1
+		if analysis == 'Transient':
+			idx = 'time'
+		
+		# continue reading until find header line
+		# necessary for when people use .plot or other sim options
+		
+		while idx not in spiceData[lineCount]:
+			lineCount += 1
+
+		cols = spiceData[lineCount].split(' ')
+		cols = filter(None, cols)
+		print cols
+		startCol = cols.index(idx)
+
+		# add two more at end to increment and handle --- line
+		lineCount += 2
+
+		outputFile = open(fileNameNoExt+'-'+str(fileCount)+'.csv','wb')
+
+		outCSV = csv.writer(outputFile, delimiter=',')
+
+		invalidWords = set(['spice', 'elapsed'])
+
+		while not set(spiceData[lineCount].lstrip().split(' ')).intersection(invalidWords):
+			currLine = spiceData[lineCount].lstrip().split('\t')
+			currLine = filter(None, currLine)
+
+
+			if idx in spiceData[lineCount].lstrip().split(' '):
+				lineCount += 1
+				# print 'Skipped line %d due to idx' % lineCount
+				continue
+
+			try:
+				currLine = map(float, currLine[startCol:-1]) 
+			except ValueError:
+				currLine = [s.strip(',') for s in currLine]
+				currLine = map(float, currLine[startCol:-1]) 
+
+			
+			outCSV.writerow(currLine)
+			lineCount += 1
+
+		outputFile.close()
+		fileCount += 1
