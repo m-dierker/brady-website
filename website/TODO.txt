@@ -1,7 +1,7 @@
 TODO
 =====
 
-- Write ngspice parser 
+- Write CSS Parser for SPICE
 
 - Write plotting script with D3/bokeh
 
@@ -28,3 +28,5 @@ DONE
 - (12/22) Make generic post page template
 - (12/22) Add categories [passive, active, rf, ms, power, digital]
 - (12/23) See if a free SPICE sim exists
+- (12/24) Write ngspice parser 
+- (12/25) Write python script to one line ngspice->csv

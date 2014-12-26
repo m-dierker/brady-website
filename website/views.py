@@ -1,7 +1,14 @@
+import sys
+import os
 from website import app
 from flask import Flask, render_template, url_for, render_template_string
 from models import *
-import os
+
+spice ='/home/brady/website/website/spice'
+if not spice in sys.path:
+	sys.path.append(spice)
+#print sys.path
+#from .spice import prettifySPICE 
 
 # don't use models.Post, use Post
 # don't forget to check permissions
@@ -41,3 +48,8 @@ def blogex():
 @app.route('/svgtest')
 def svg():
 	return render_template('svgtest.html')
+
+@app.route('/code')
+def codesample():
+	codeTest = prettifySPICE('spice/rc-filter.net')
+	return render_template('codesample.html', data=codeTest)
