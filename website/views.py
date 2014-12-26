@@ -3,12 +3,8 @@ import os
 from website import app
 from flask import Flask, render_template, url_for, render_template_string
 from models import *
+from prettifySPICE import *
 
-spice ='/home/brady/website/website/spice'
-if not spice in sys.path:
-	sys.path.append(spice)
-#print sys.path
-#from .spice import prettifySPICE 
 
 # don't use models.Post, use Post
 # don't forget to check permissions
@@ -51,5 +47,8 @@ def svg():
 
 @app.route('/code')
 def codesample():
-	codeTest = prettifySPICE('spice/rc-filter.net')
+	#return ' '.join(dir(prettifySPICE))
+	scriptPath = os.path.dirname(__file__)
+	filePath = 'spice/rc-filter.net'
+	codeTest = prettifySPICE(os.path.join(scriptPath, filePath))
 	return render_template('codesample.html', data=codeTest)

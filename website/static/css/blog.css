@@ -203,20 +203,21 @@ h3 {
     background: none;
 }
 
-.code-block,
-.code-spice-comment,
-.code-spice-variable,
-.code-spice-command,
-.code-spice-keyword {
-    background-color: #989898;
+.code-block {
+    font-weight: bold;
+    display: inline-block;
+    border-style: solid;
+    border-width: 10px;
+    border-color: rgb(39, 40, 34);
+    background-color: rgb(39, 40, 34);
     border-radius: 10px;
     -moz-border-radius: 10px;
     font-family: monospace;
+    color: white;
 }
 
 .code-spice-comment {
-    color: #222222;
-    opacity: 0.6;
+    color: rgb(117, 113, 94);
 }
 
 .code-spice-variable {
@@ -228,7 +229,7 @@ h3 {
 }
 
 .code-spice-keyword  {
-    color: #AE81FF;
+    color: rgb(174, 128, 255);
 }
 
 

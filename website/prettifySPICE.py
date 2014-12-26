@@ -10,21 +10,21 @@
 # 	code-spice-keyword  ( any other keyword )
 
 def addComment(spiceLine):
-	startComment = '<div class="code-spice-comment">'
-	endComment = '</div>\n'
+	startComment = '<span class="code-spice-comment">'
+	endComment = '</span>'
 	return startComment + ''.join(spiceLine) + endComment
 
 def addLine(spiceLine):
-	startCom = '<div class="code-spice-command">'
-	startKey = '<div class="code-spice-keyword">'
-	startVar = '<div class="code-spice-variable">'
-	endTag = '</div>\n'
+	startCom = '<span class="code-spice-command">'
+	startKey = '<span class="code-spice-keyword">'
+	startVar = '<span class="code-spice-variable">'
+	endTag = '</span>'
 	
 	spiceLine = spiceLine.split(' ')
 	if '.' in spiceLine[0]:
-		outStr = startCom + spiceLine[0] + endTag
+		outStr = startCom + spiceLine[0] + ' ' + endTag
 	else:
-		outStr = startVar + spiceLine[0] + endTag
+		outStr = startVar + spiceLine[0] + ' ' + endTag
 	
 	for word in spiceLine[1:]:
 		validSims = ['tran', 'ac', 'dc', 'disto', 'noise', 'op',
@@ -35,11 +35,11 @@ def addLine(spiceLine):
 			# break word into v->rest of word
 			words = word.split('(')
 			outStr += startKey + words[0] + endTag
-			outStr += '(' + ''.join(words[1:])
+			outStr += '(' + ''.join(words[1:]) + ' '
 
 
 		elif word.lower() in validSims:
-			outStr += startCom + word + endTag
+			outStr += startCom + word + ' ' + endTag
 
 		else:
 			outStr += word + ' '
@@ -61,5 +61,5 @@ def prettifySPICE(spiceFile):
 		else:
 			outputHTML += addLine(line)
 
-		outputHTML += '<br>\n'
+		outputHTML += '<br>'
 	return outputHTML
