@@ -1,4 +1,4 @@
-* Spice netlister for gnetlist
+* Simple RC Filter
 r1 n1 n0 10k
 c1 n1 0 1nF
 Vin n0 0 ac 1v pulse (0 5v 1s 1s 1s 5s 12s)

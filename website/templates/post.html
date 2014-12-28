@@ -5,10 +5,10 @@
     <!-- A single blog post -->
     <section class="post">
         <header class="post-header">
-            <h2 class="post-title">{{post.title}}</h2>
+            <h2 class="post-title">{{title}}</h2>
             <hr>
             <p class="post-meta">
-                By Brady Salz under <a class="post-category-{{post.category.name}}" href="#">{{post.category.name.upper()}}</a> at {{post.pub_date.month}}/{{post.pub_date.day}}/{{post.pub_date.year}}
+                By Brady Salz under <a class="post-category-{{category}}" href="#">{{category.upper()}}</a> at {{date}}
             </p>
         </header>
 

@@ -1,9 +1,6 @@
 import bokeh
-from bokeh.plotting import circle
 from bokeh.resources import CDN
 from bokeh.embed import file_html, components
-
-
 from bokeh.sampledata.iris import flowers
 from bokeh.plotting import *
 
@@ -20,6 +17,7 @@ p.circle(flowers["petal_length"], flowers["petal_width"],
                 color=flowers["color"], fill_alpha=0.2, size=10, )
 
 script, div = components(p, CDN)
-
+print script
 f = open('testscript.html', 'w')
 f.write(script)
+f.close()

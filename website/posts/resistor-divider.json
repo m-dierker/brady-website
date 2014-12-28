@@ -1,0 +1,31 @@
+{	
+	"title": "Resistor Divider",
+	
+	"category": "passive",
+
+	"date": "12/25/14",
+
+	"body": "<p class=\"post-description-body\">
+			The resistor divider is the most basic circuit we can utilize. It consists solely of two resistors and some kind of source, be it voltage or current. One of the most common problems when designing a circuit is getting an exact voltage reference available in a certain spot. Using basic properities of Ohm's Law, we can derive some equations to convert this simple set-up into an amazingly-inefficient \buck converter\" - a circuit that translates from one voltage level <b>down</b> to another one. The down part is important, with a resistor divider, you can not \"up\" a voltage level, only lower it. 
+		</p>
+
+		<br>
+		<img class=\"post-image\" src=\"{{ url_for('static', filename = 'images/resistor-divider.svg') }}\">
+		<br>
+
+		<p class=\"post-description-body\">
+			The only thing that's interesting about this circuit is the midpoint - so let's calculate Vout. Using Ohm's Law: 
+			$$V = IR$$ 
+			We can calculate the current as:
+			$$I_{out} =\\dfrac{Vin}{R_1+R_2}$$
+			Since R2 goes to ground, the voltage across R2 is simply Vout. Using Ohm's Law again:
+			$$V_{out} = IR = \\dfrac{V_{in}}{R_1+R_2} \\cdot R_2$$
+
+			Or in a more recognizable form:
+			$$\\dfrac{V_{out}}{V_{in}} = \\dfrac{R_2}{R_1+R_2}$$
+
+			This again tells us that we can never boost up the voltage, since (in theory) the denominator is the numerator <i>plus more</i>. The only way to do change this would be to add some form of negative resistance via feedback. What's nice (or boring, depending on who you are) about this circuit is its lack of frequency dependence. In an ideal world, it will perform the exact same function across the entire frequency spectrum. In reality, parasistics would dominate in two forms: inductive and capacitive. Inductive impedance would arrive in series, and generally arises from the lead connections (either wire or pads). Capacitive impedance would arrive from the chip's package, and would lead to a short of the chip. While only one would dominate, it is impossible to make a sweeping judgement given how many components are available on the market. 
+
+		</p>"
+}
+

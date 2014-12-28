@@ -1,8 +1,6 @@
 TODO
 =====
 
-- Write CSS Parser for SPICE
-
 - Write plotting script with D3/bokeh
 
 - Finish add post script
@@ -10,7 +8,7 @@ TODO
 - Add colors for Categories
 
 - Make topics list
-
+	
 - Make home page template with last X posts 
 	- most recent 3 to 5 posts
 	- need to limit each to a certain character count (aka don't lead with a picture)
@@ -23,10 +21,11 @@ TODO
 
 
 DONE
-====
+=====
 - (12/22) Learn SchemDraw better, perhaps output to SVG instead of PNG? 
 - (12/22) Make generic post page template
 - (12/22) Add categories [passive, active, rf, ms, power, digital]
 - (12/23) See if a free SPICE sim exists
 - (12/24) Write ngspice parser 
 - (12/25) Write python script to one line ngspice->csv
+- (12/26) Write CSS Parser for SPICE
