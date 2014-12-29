@@ -14,7 +14,7 @@ Circuits simulated using the ngspice package from UC Berkeley
 Drawn using the Python SchemDraw package
 
 ## Plots
-SPICE output parsed to CSV and plotted using Octave
+SPICE output parsed to CSV and plotted using Octave, SVG for maximum zoominess
 
 ## Words
 I thought some thoughts 
