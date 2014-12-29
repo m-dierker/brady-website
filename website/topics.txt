@@ -1,0 +1,32 @@
+Topics
+=====
+- RC Filter (series)
+- RC Filter (parallel)
+- RC -> RL -> LC
+- Higher Order Filters
+- Understanding log+dB
+- Power: DC vs AC vs Available
+- Op Amp Circuits
+- Single Stage Amplifiers
+- Current Mirror
+- Diff Amp
+- Feedback
+- Flash ADC
+- Comparator
+- Pipeline ADC
+- Oscillators
+- Buck Converter
+- Boost Converter
+- Isolated Converters
+- Matching Networks
+- Multistage Amplifiers
+- Switched Capacitor Circuits
+- Gain Boosted Amplifiers
+- 
+
+
+
+DONE
+=====
+- Resistor Voltage Divider
+- 

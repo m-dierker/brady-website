@@ -63,16 +63,20 @@ def parse_spice(fileName):
 
 		outCSV = csv.writer(outputFile, delimiter=',')
 
-		invalidWords = set(['spice', 'elapsed'])
+		invalidWords = set(['*', 'elapsed'])
 
 		while not set(spiceData[lineCount].lstrip().split(' ')).intersection(invalidWords):
 			currLine = spiceData[lineCount].lstrip().split('\t')
 			currLine = filter(None, currLine)
+	
+			if len(currLine) <= 1:
+				lineCount +=1 
+				continue
 
 
 			if idx in spiceData[lineCount].lstrip().split(' '):
 				lineCount += 1
-				# print 'Skipped line %d due to idx' % lineCount
+				print 'Skipped line %d due to idx' % lineCount
 				continue
 
 			try:

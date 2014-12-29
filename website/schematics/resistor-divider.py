@@ -17,5 +17,5 @@ d.add (e.GND)
 d.draw()
 
 # save both for browser incompatibility 
-d.save('../static/images/resistor-divider.svg')
-d.save('../static/images/resistor-divider.png')
+d.save('../static/images/schematics/resistor-divider.svg')
+d.save('../static/images/schematics/resistor-divider.png')

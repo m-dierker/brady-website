@@ -10,7 +10,7 @@
 		</p>
 
 		<br>
-		<img class=\"post-image\" src=\"{{ url_for('static', filename = 'images/resistor-divider.svg') }}\">
+		<img class=\"post-image\" src=\"{{ url_for('static', filename = 'images/schematics/resistor-divider.svg') }}\">
 		<br>
 
 		<p class=\"post-description-body\">

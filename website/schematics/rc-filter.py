@@ -2,7 +2,7 @@ import SchemDraw as sch
 import SchemDraw.elements as e
 
 d = sch.Drawing()
-Vsource = d.add(e.SOURCE_V, label='Vin')
+Vsource = d.add(e.SOURCE_SIN, label='Vin')
 d.add( e.RES, d='right', label='R1')
 
 d.push()
@@ -18,5 +18,5 @@ d.draw()
 
 
 # save both for browser incompatibility 
-d.save('../static/images/' + __file__[:-3] + '.png')
-d.save('../static/images/' + __file__[:-3] + '.svg')
+d.save('/home/brady/website/website/static/images/schematics/' + __file__[:-3] + '.png')
+d.save('/home/brady/website/website/static/images/schematics/' + __file__[:-3] + '.svg')

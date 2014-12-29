@@ -9,6 +9,9 @@
 #	code-spice-command  ( .any, analysis )
 # 	code-spice-keyword  ( any other keyword )
 
+import os
+
+
 def addComment(spiceLine):
 	startComment = '<span class="code-spice-comment">'
 	endComment = '</span>'
@@ -62,4 +65,10 @@ def prettifySPICE(spiceFile):
 			outputHTML += addLine(line)
 
 		outputHTML += '<br>'
+
+
+	outPath = os.path.join(os.path.dirname(__file__), 'static/netlist/' + spiceFile.split('/')[1][:-3] + 'html')
+	outFile = open(outPath, 'w')
+	outFile.write(outputHTML)
+	outFile.close()
 	return outputHTML
