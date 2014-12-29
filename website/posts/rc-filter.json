@@ -24,17 +24,19 @@
 
                 \\[ \\dfrac{Vout}{Vin} = \\dfrac{\\frac{1}{jwC}}{\\frac{1}{jwC}+R} = \\dfrac{1}{1+jwRC} \\]
 
-                Now, we can simulate it using ngspice:
+                Now, we can simulate it using ngspice, here using a 10k resistor and a 1uF capacitor:
             </p>
-            <div class=\"code-block\">
+
+            <p class=\"code-block\" id=\"netlist\">
                 <script>
-                console.log(window.location.pathname)
-                $(code-block).load({{url_for('static',filename='netlist/rc-filter.html')}})
+                    $(\"#netlist\").load('/static/netlist/rc-filter.html')
                 </script>
-            </div>
-            
+            </p>
+
+            <p class=\"post-description-body\">
+                Plotting and viewing the output via Octave:
+            </p>
+
+            <img src=\"{{ url_for('static', filename='images/plots/rc-filter.svg') }}\">
             "
 }
-
-
-
