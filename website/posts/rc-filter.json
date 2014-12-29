@@ -1,0 +1,29 @@
+{	
+	"title": "First Order RC Filter",
+	
+	"category": "passive",
+
+	"date": "12/28/14",
+
+	"body": "<p class=\"post-description-body\">
+				Most of the circuits I build are battery powered. Batteries generate power due to a bunch of <a href=\"http://en.wikipedia.org/wiki/Galvanic_cell\">black magic</a> chemistry. In an ideal world, the battery would provide a constant DC voltage as labeled, be it 1.5V for AA type or 9V for D type. While they do certainly generate that DC level, they also tend to have some higher frequency noise. This comes about as a result of the random walk nature of the electrons colliding and forming a potential. What that really means for us, however, is that we don't get that perfect DC line of voltage that we were hoping for. Instead, it's a fuzzy line with some definite high frequency noise that we would love to remove.
+
+                The easiest way to do that is to design some kind of circuit that will remove all that high frequency noise from the circuit so we only get our ideal DC wave out. To do that, we'll use a capacitor to block all that noise from our output, and leave it somewhere else. The impedance of a capacitor isn't linear like a resistor, but instead follows an inverse curve that is dependent on frequency (in radians):
+
+                \\[Z_C = \\dfrac{1}{jwC} \\text{, where } j = \\sqrt{-1}, w_{rad}=2\\pi f_{Hz} \\]
+
+                Rather than try to visualize the inverse relationship, it's simpler to remember each limit. Think of a capacitor at DC - it represents a pair of open wires. At very high frequencies, the capacitor can be viewed as a short circuit. To prove that mathematically:
+
+                \\[ \\lim_{w \\rightarrow 0} Z_C  = \\dfrac{1}{0} \\approx \\infty \\]
+                \\[ \\lim_{w \\rightarrow \\infty} Z_C  = \\dfrac{1}{\\infty} \\approx 0 \\]
+            </p>
+            <img class=\"post-image\" src=\"{{ url_for('static', filename = 'images/rc-filter.svg') }}\">
+
+            <p class=\"post-description-body\">
+                Now the solution to Vout takes the same form as the <a href=\"resistor-divider\">resistor divider</a>
+            </p>
+            "
+}
+
+
+

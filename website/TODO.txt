@@ -1,9 +1,7 @@
 TODO
 =====
 
-- Write plotting script with D3/bokeh
-
-- Finish add post script
+- Write plotting script with D3/bokeh/octave?
 
 - Add colors for Categories
 
@@ -29,3 +27,4 @@ DONE
 - (12/24) Write ngspice parser 
 - (12/25) Write python script to one line ngspice->csv
 - (12/26) Write CSS Parser for SPICE
+- (12/27) Converted to JSON
