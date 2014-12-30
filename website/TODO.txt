@@ -1,8 +1,6 @@
 TODO
 =====
 
-- Write Topics Page
-
 - Add colors for Categories
 
 - Add Suggest Topic Button database
@@ -11,8 +9,6 @@ TODO
 	- most recent 3 to 5 posts
 	- need to limit each to a certain character count (aka don't lead with a picture)
 	- need new template for post snippet? or will post template do with passing less data...
-
-- Add Categories pages storing list of posts with that category
 
 - Add comment section
 	- will extend individual blog page template 
@@ -31,3 +27,5 @@ DONE
 - (12/28) Write plotting script with octave
 - (12/29) Make topics list
 - (12/29) Write Contact page
+- (12/29) Write Topics Page
+- (12/29) Add Categories pages storing list of posts with that category

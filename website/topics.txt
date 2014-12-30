@@ -1,6 +1,5 @@
 Topics
 =====
-- RC Filter (series)
 - RC Filter (parallel)
 - RC -> RL -> LC
 - Higher Order Filters
@@ -22,11 +21,8 @@ Topics
 - Multistage Amplifiers
 - Switched Capacitor Circuits
 - Gain Boosted Amplifiers
-- 
-
-
 
 DONE
 =====
 - Resistor Voltage Divider
-- 
+- RC Filter (series)

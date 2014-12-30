@@ -13,6 +13,12 @@ from operator import itemgetter
 @app.route('/index.html')
 @app.route('/home')
 @app.route('/')
+def home():
+	jsonPosts = getPostsJSON()
+	# show last 3 posts
+	return 'home'
+
+
 @app.route('/about')
 def about():
     return render_template('about.html', title='About')

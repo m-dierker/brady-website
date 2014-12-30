@@ -1,0 +1,48 @@
+{	
+	"title": "Understanding log + dB",
+	
+    "url": "log-db",
+
+	"category": "passive",
+
+	"date": "2014-12-30",
+
+	"body": "
+            <p class=\"post-description-body\">
+                Understanding how to use logarithmic scale and the decibel unit are considered to be critical in electrical engineering. It's important to recall that nearly every measurement we take is a relative measurement. Voltages, while often considered an \"absolute\" number, are instead really just <i>relative</i> measurements taken with respect to a ground node. To show that, let's look at the two circuits below.
+            </p>
+
+            <img src=\"{{ url_for('static', filename='images/schematics/log-db-1.svg') }}\">
+            <img src=\"{{ url_for('static', filename='images/schematics/log-db-2.svg') }}\">
+
+            <p class=\"post-description-body\">
+                Surprise! It's the same circuit, just with a ground node moved. By convention, we define ground to be 0 Volts, so let's keep that. In the left hand circuit, we can place the bottom node at -10V by going against the two sources, and the top node at 0V. In the right hand circuit, the bottom node is at -5V, and the top node is at 5V. While moving ground changed each node relative to ground, it did not change the voltage across each source. That voltage, defined as \\(V_{top} - V_{bot}\\) for each component, is independent of moving ground around. 
+            </p>
+            <p class=\"post-description-body\">
+                The decibel is just another way of defining a relative voltage. Rather than defining it as a difference, we now get to define it as a ratio of voltages. In actuality we use powers, but that's just the voltage squared for our case. We define one bel (L) as the log of two powers:
+                \\[ L_{B} = \\log_{10} \\dfrac{P_1}{P_2} \\]
+
+                A decibel will therefore be 10 times as much as a regular bel:
+
+                \\[ L_{dB} = 10\\log_{10} \\dfrac{P_1}{P_2} \\]
+
+                Now converting it from power to volts:
+
+                \\[ L_{B} = 10\\log_{10} \\dfrac{V_1^2}{V_2^2} = 10\\log_{10} \\left( \\dfrac{V_1}{V_2} \\right)^2
+                = 20\\log_{10}\\dfrac{V_1}{V_2} \\]
+            </p>
+
+            <p class=\"post-description-body\">
+                Now that we have a definition, let's show why we use it. Many circuits we design are used to transform an input to some output, primarily through changing the amplitude. Making the amplitude bigger is called <i>gain</i>, whereas decreasing it is called <i>attenuation</i>. Using a voltage scale, we can represent gain as all numbers from one to infinity, and attenuation would be all numbers from zero to one (negative numbers aren't used, because we only care about amplitude, not phase difference for now). Using a decibel scale, we can show gain as all numbers from zero to infinity, and attenuation as all numbers from negative infinity to zero.
+            </p>
+
+            <img src=\"{{ url_for('static', filename='images/plots/log-db-1.svg') }}\">
+            <img src=\"{{ url_for('static', filename='images/plots/log-db-2.svg') }}\">
+            <img src=\"{{ url_for('static', filename='images/plots/log-db-3.svg') }}\">
+            <img src=\"{{ url_for('static', filename='images/plots/log-db-4.svg') }}\">
+
+            <p class=\"post-description-body\">
+                Take a look at the four above plots, each showing the output of a lowpass filter. All we do is alternate which axis has a log scale compared to a linear scale. The top left graph is effectively useless, showing us a negative function. The top right graph is slightly more useful, showing the beginning in a much more visible manner, with the bottom left plot showing the ending in a clear manner. Combining them all into the bottom right graph, we get a clear picture of our output across a huge spectrum, with an easy way to measure all points in a relative manner. Hopefully this makes the importance of the dB scale clear!
+            </p>
+            "
+}
