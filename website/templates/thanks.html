@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="post-header">
+    <h2 class="post-title">{{ title }}</h2>
+    <hr>
+</header>
+
+<p class="post-description-body">
+	I wanted to make a blog on circuits and/or open source hardware, and it turns out to do that you need a lot of open source software. Thanks to, in no particular order:
+</p>
+
+<ul>
+
+	<li>
+		<a href="http://httpd.apache.org/">Apache</a>, for making the server
+	</li>
+	<li>
+		<a href="http://flask.pocoo.org/">Flask</a>, for making the backend
+	</li>
+
+	<li>
+		<a href="http://purecss.io">PureCSS</a>, for making the frontend
+	</li>
+
+	<li>
+		<a href="http://www.mathjax.org/">MathJax</a>, for making the math
+	</li>
+
+	<li>
+		<a href="https://pypi.python.org/pypi/SchemDraw">SchemDraw</a>, for making the schematics
+	</li>
+
+	<li>
+		<a href="http://www.ngspice.com/">NGSPICE</a>, for making the simulations	
+	</li>
+
+	<li>
+		<a href="https://www.gnu.org/software/octave/">Octave</a>, for making the plots
+	</li>
+
+</ul>
+
+{% endblock %}

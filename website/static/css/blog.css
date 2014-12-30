@@ -6,7 +6,7 @@
 
 a {
     text-decoration: none;
-    color: rgb(61, 146, 201);
+    color: rgb(7, 183, 176);
 }
 a:hover,
 a:focus {
@@ -198,9 +198,7 @@ h3 {
     color: #888;
     font-size: 85%;
 }
-.footer a {
-    color: rgb(61, 146, 201);
-}
+
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
     background: none;
@@ -241,6 +239,28 @@ h3 {
     color: rgb(174, 128, 255);
 }
 
+.fa {
+    margin-left: 15px;
+}
+
+.fa-ul {
+    line-height: 50px;
+}
+
+.fa-ul a {
+    font-weight: bold;
+}
+
+.list-item-bullet {
+    color: rgb(18, 132, 63);
+    font-size: 30px;
+    line-height: 30px;
+}
+
+.list-item {
+    line-height: 30px;
+    font-size: 20px;
+}
 
 @media (min-width: 48em) {
     .content {

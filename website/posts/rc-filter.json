@@ -1,9 +1,11 @@
 {	
 	"title": "First Order RC Filter",
 	
+    "url": "rc-filter",
+
 	"category": "passive",
 
-	"date": "12/28/14",
+	"date": "2014-12-28",
 
 	"body": "<p class=\"post-description-body\">
 				Most of the circuits I build are battery powered. Batteries generate power due to a bunch of <a href=\"http://en.wikipedia.org/wiki/Galvanic_cell\">black magic</a> chemistry. In an ideal world, the battery would provide a constant DC voltage as labeled, be it 1.5V for AA type or 9V for D type. While they do certainly generate that DC level, they also tend to have some higher frequency noise. This comes about as a result of the random walk nature of the electrons colliding and forming a potential. What that really means for us, however, is that we don't get that perfect DC line of voltage that we were hoping for. Instead, it's a fuzzy line with some definite high frequency noise that we would love to remove. Shown below is the blue output we'll probably get, and the red output being ideal.

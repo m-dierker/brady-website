@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="post-header">
+    <h2 class="post-title">Category: {{ title }}</h2>
+    <hr>
+</header>
+
+<ul>
+	{% for date,title,url in zip(dates, titles,urls) %}
+		<li class="list-item-bullet">
+			<a class="list-item" href="/post/{{ url }}">
+				{{ title }} [{{ date }}] 
+			</a>
+		</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

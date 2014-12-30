@@ -5,7 +5,7 @@ from website import app
 from flask import Flask, render_template, url_for, render_template_string
 from models import *
 from prettifySPICE import *
-
+from operator import itemgetter
 
 # don't use models.Post, use Post
 # don't forget to check permissions
@@ -22,59 +22,87 @@ def about():
 def resume():
 	return render_template('resume.html')
 
+
 @app.errorhandler(404)
 def pageNotFound(e):
-	return render_template('error.html', title='404', errmsg='Page Not Found')
+	return render_template('error.html', title='404', errmsg='Page Not Found'), 404
+
 
 @app.route('/post/<post>')
 def anyPost(post):
+	validPosts, validPath = getValidPosts()
+
+	if post in validPosts:
+		validFile = os.path.join(validPath, post + '.json')
+		jsonFile = open(validFile, 'r')
+		jsonData = json.load(jsonFile, strict=False)
+		jsonFile.close()
+		rBody = render_template_string(jsonData['body'])
+		return render_template('post.html', title=jsonData['title'], date=jsonData['date'],
+								category=jsonData['category'], body=rBody)
+	else:
+		return pageNotFound(404)
+
+
+@app.route('/category/<cat>')
+def anyCategory(cat):
+	jsonPosts = getPostsJSON()
+	validCat = ['passive', 'analog', 'power', 'digital', 'mixed-signal', 'rf']
+
+	if cat in validCat:
+		# yes dierker shut up i'll one line this later (lol no i won't)
+		dates = [d['date'] for d in jsonPosts if d['category'] == cat]
+		titles = [t['title'] for t in jsonPosts if t['category'] == cat]
+		urls = [u['url'] for u in jsonPosts if u['category'] == cat]
+		return render_template('categories.html', title=cat.title(), dates=dates, titles=titles, 
+								urls=urls, zip=zip)
+	else:
+		return pageNotFound(404)		
+
+
+
+@app.route('/contact')
+def contact():
+	return render_template('contact.html', title="Contact")
+
+
+@app.route('/topics')
+def topics():
+	jsonPosts = getPostsJSON()
+	
+	jsonPosts = sorted(jsonPosts, key=itemgetter('date'))
+	jsonPosts = jsonPosts[::-1] # apparently it reverses a list
+
+	dates = [d['date'] for d in jsonPosts]
+	titles = [t['title'] for t in jsonPosts]
+	urls = [u['url'] for u in jsonPosts]
+
+ 	return render_template('topics.html', title='Topics', titles=titles, dates=dates, urls=urls, zip=zip)
+
+	
+@app.route('/thanks')
+def thanks():
+	return render_template('thanks.html', title='Acknowledgements')
+
+def getValidPosts():
 	validPath = os.path.dirname(__file__)
 	relPath = 'posts'
 	validPath = os.path.join(validPath, relPath)
 
 	validPosts = [ f for f in os.listdir(validPath) if os.path.isfile(os.path.join(validPath, f)) ]
 	validPosts = [ p.rsplit('.')[0] for p in validPosts ]
+	return validPosts, validPath
 
-	if post in validPosts:
+
+def getPostsJSON():
+	validPosts, validPath = getValidPosts()
+	
+	jsonPosts = []
+	for post in validPosts:
 		validFile = os.path.join(validPath, post + '.json')
-		jsonData = open(validFile, 'r')
-		jsonData = json.load(jsonData, strict=False)
-		rBody = render_template_string(jsonData['body'])
-		return render_template('post.html', title=jsonData['title'], date=jsonData['date'],
-								category=jsonData['category'], body=rBody)
+		jsonFile = open(validFile, 'r')
+		jsonData = json.load(jsonFile, strict=False)
+		jsonPosts.append(jsonData)
+		jsonFile.close()
 
-
-	else:
-		return pageNotFound(404)
-
-@app.route('/contact')
-def contact():
-	return render_template('contact.html')
-
-@app.route('/blogtest')
-def blogex():
-    return render_template('index.html')
-
-@app.route('/svgtest')
-def svg():
-	return render_template('svgtest.html')
-
-@app.route('/code')
-def codesample():
-	scriptPath = os.path.dirname(__file__)
-	filePath = 'spice/rc-filter.net'
-	codeTest = prettifySPICE(os.path.join(scriptPath, filePath))
-	return render_template('codesample.html', data=codeTest)
-
-@app.route('/rand')
-def plotsample():
-	scriptPath = os.path.dirname(__file__)
-	plotPath = 'plots/testscript.html'
-	plotTest = os.path.join(scriptPath, plotPath)
-	plotTest = open(plotTest, 'r').read()
-	return render_template('codesample.html', data=plotTest)
-
-
-@app.route('/shivani')
-def shivani():
-	return render_template('aboutugly.html', title='Ugly')
+	return jsonPosts

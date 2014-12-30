@@ -6,10 +6,10 @@
     <meta name="description" content="begin blog baby?">
 
     {% if title %}
-    <title>{{ title }} - SalzTech</title>
+    <title>{{ title }} - b$</title>
     
     {% else %}
-    <title>SalzTech</title>
+    <title>b$</title>
 
     {% endif %}
     
@@ -29,20 +29,11 @@
     <!-- include jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
-    <!-- include Cycle -->
-    <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
-
     <!-- include Mathjax -->
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.slideshow').cycle({
-                fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-                speed: 350
-            });
-        });
-    </script>
+    <!-- include FontAwesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -65,10 +56,10 @@
                     <a class="pure-button" href="{{ url_for('about')}}">About</a>
                 </div>
                 <div class="nav-item">
-                    <a class="pure-button" href="{{ url_for('about')}}">Contact</a>
+                    <a class="pure-button" href="{{ url_for('contact')}}">Contact</a>
                 </div>
                 <div class="nav-item">
-                    <a class="pure-button" href="{{ url_for('about')}}">Topics</a>
+                    <a class="pure-button" href="{{ url_for('topics')}}">Topics</a>
                 </div>
             </nav>
         </div>
@@ -79,9 +70,7 @@
         {% block content %} {% endblock %}
         
         <div class="footer">
-                Made with <a href="http://flask.pocoo.org">Flask</a> and <a href="http://purecss.io">PureCSS</a>
-                <br>
-                &copy; Braedon Salz
+                this page was made with <a href="{{ url_for('thanks') }}">a lot of things</a>
         </div>
     </div>
 </div>
