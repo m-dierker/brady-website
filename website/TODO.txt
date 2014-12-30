@@ -5,11 +5,6 @@ TODO
 
 - Add Suggest Topic Button database
 	
-- Make home page template with last X posts 
-	- most recent 3 to 5 posts
-	- need to limit each to a certain character count (aka don't lead with a picture)
-	- need new template for post snippet? or will post template do with passing less data...
-
 - Add comment section
 	- will extend individual blog page template 
 
@@ -29,3 +24,4 @@ DONE
 - (12/29) Write Contact page
 - (12/29) Write Topics Page
 - (12/29) Add Categories pages storing list of posts with that category
+- (12/30) Make home page template with last X posts 

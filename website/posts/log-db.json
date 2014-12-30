@@ -28,7 +28,7 @@
 
                 Now converting it from power to volts:
 
-                \\[ L_{B} = 10\\log_{10} \\dfrac{V_1^2}{V_2^2} = 10\\log_{10} \\left( \\dfrac{V_1}{V_2} \\right)^2
+                \\[ L_{dB} = 10\\log_{10} \\dfrac{V_1^2}{V_2^2} = 10\\log_{10} \\left( \\dfrac{V_1}{V_2} \\right)^2
                 = 20\\log_{10}\\dfrac{V_1}{V_2} \\]
             </p>
 

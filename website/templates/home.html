@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead"> Recent Posts </h1>
+    <section class="post">
+
+    {% for post in posts %}
+        <header class="post-header">
+            <h2 class="post-title">{{post['title']}}</h2>
+            <hr>
+            <p class="post-meta">
+                By Brady Salz under <a class="post-category-{{post['category']}}" href="#">{{post['category'].upper()}}</a> at {{post['date']}}
+            </p>
+        </header>
+
+        <div class="post-description">
+            {{ post['body'].split('</p>')[0]|safe }} 
+            <a href={{ 'post/' + post['url'] }}> Read more</a>
+            </p>
+        </div>
+
+    {% endfor %}
+    </section>
+</div>
+
+{% endblock %}

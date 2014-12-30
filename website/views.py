@@ -10,28 +10,18 @@ from operator import itemgetter
 # don't use models.Post, use Post
 # don't forget to check permissions
 
+@app.route('/index')
 @app.route('/index.html')
 @app.route('/home')
 @app.route('/')
 def home():
 	jsonPosts = getPostsJSON()
-	# show last 3 posts
-	return 'home'
+	
+	jsonPosts = sorted(jsonPosts, key=itemgetter('date'))
+	jsonPosts = jsonPosts[::-1][:3] # apparently it reverses a list
 
-
-@app.route('/about')
-def about():
-    return render_template('about.html', title='About')
-
-
-@app.route('/resume')
-def resume():
-	return render_template('resume.html')
-
-
-@app.errorhandler(404)
-def pageNotFound(e):
-	return render_template('error.html', title='404', errmsg='Page Not Found'), 404
+	#return ' '.join(urls)
+	return render_template('home.html', title='Home',  posts=jsonPosts)
 
 
 @app.route('/post/<post>')
@@ -66,12 +56,6 @@ def anyCategory(cat):
 		return pageNotFound(404)		
 
 
-
-@app.route('/contact')
-def contact():
-	return render_template('contact.html', title="Contact")
-
-
 @app.route('/topics')
 def topics():
 	jsonPosts = getPostsJSON()
@@ -84,6 +68,26 @@ def topics():
 	urls = [u['url'] for u in jsonPosts]
 
  	return render_template('topics.html', title='Topics', titles=titles, dates=dates, urls=urls, zip=zip)
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html', title='About')
+
+
+@app.route('/resume')
+def resume():
+	return render_template('resume.html')
+
+
+@app.errorhandler(404)
+def pageNotFound(e):
+	return render_template('error.html', title='404', errmsg='Page Not Found'), 404
+
+
+@app.route('/contact')
+def contact():
+	return render_template('contact.html', title="Contact")
 
 	
 @app.route('/thanks')
