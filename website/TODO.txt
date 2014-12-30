@@ -1,9 +1,13 @@
 TODO
 =====
 
-- Make topics list
+- Write Contact page
+
+- Write Topics Page
 
 - Add colors for Categories
+
+- Add Suggest Topic Button database
 	
 - Make home page template with last X posts 
 	- most recent 3 to 5 posts
@@ -27,3 +31,4 @@ DONE
 - (12/26) Write CSS Parser for SPICE
 - (12/27) Converted to JSON
 - (12/28) Write plotting script with octave
+- (12/29) Make topics list

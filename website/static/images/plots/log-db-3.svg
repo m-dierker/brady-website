@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="576px" height="432px" viewBox="0 0 576 432">
+<title>glps_renderer figure</title>
+<desc>
+Creator: GL2PS 1.3.8, (C) 1999-2012 C. Geuzaine
+For: Octave
+CreationDate: Mon Dec 29 17:52:02 2014
+</desc>
+<defs>
+</defs>
+<g shape-rendering="crispEdges">
+<polygon fill="#ffffff" points="74.88,384.48 521.28,384.48 74.88,32.4"/>
+<polygon fill="#ffffff" points="521.28,384.48 521.28,32.4 74.88,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,384.48 521.28,384.48"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,32.4 521.28,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,32.4 521.28,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,384.48 521.28,384.48"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,384.48 74.88,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,384.48 521.28,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,384.48 521.28,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,384.48 74.88,32.4 74.88,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,32.4 521.28,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,384.48 521.28,384.48"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,384.48 74.88,384.48 74.88,380.015"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,32.4 74.88,36.865"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="164.16,384.48 164.16,380.015"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="164.16,32.4 164.16,36.865"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="253.44,384.48 253.44,380.015"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="253.44,32.4 253.44,36.865"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="342.72,384.48 342.72,380.015"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="342.72,32.4 342.72,36.865"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="432,384.48 432,380.015"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="432,32.4 432,36.865"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,384.48 521.28,380.015"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,32.4 521.28,36.865"/>
+<text fill="#000000" x="74.88" y="389.481" font-size="14" text-anchor="middle" baseline-shift="-14" font-family="Helvetica">0</text>
+<text fill="#000000" x="164.16" y="389.481" font-size="14" text-anchor="middle" baseline-shift="-14" font-family="Helvetica">2e+07</text>
+<text fill="#000000" x="253.44" y="389.481" font-size="14" text-anchor="middle" baseline-shift="-14" font-family="Helvetica">4e+07</text>
+<text fill="#000000" x="342.72" y="389.481" font-size="14" text-anchor="middle" baseline-shift="-14" font-family="Helvetica">6e+07</text>
+<text fill="#000000" x="432" y="389.481" font-size="14" text-anchor="middle" baseline-shift="-14" font-family="Helvetica">8e+07</text>
+<text fill="#000000" x="521.28" y="389.481" font-size="14" text-anchor="middle" baseline-shift="-14" font-family="Helvetica">1e+08</text>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,384.48 79.348,384.48"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,384.48 516.812,384.48"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,334.183 79.348,334.183"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,334.183 516.812,334.183"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,283.886 79.348,283.886"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,283.886 516.812,283.886"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,233.589 79.348,233.589"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,233.589 516.812,233.589"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,183.291 79.348,183.291"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,183.291 516.812,183.291"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,132.994 79.348,132.994"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,132.994 516.812,132.994"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,82.6971 79.348,82.6971"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,82.6971 516.812,82.6971"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="74.88,32.4 79.348,32.4"/>
+<polyline fill="none" stroke="#000000" stroke-width="0.5" stroke-dasharray="16,0" points="521.28,32.4 516.812,32.4"/>
+<text fill="#000000" x="69.8755" y="384.48" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">-140</text>
+<text fill="#000000" x="69.8755" y="334.183" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">-120</text>
+<text fill="#000000" x="69.8755" y="283.886" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">-100</text>
+<text fill="#000000" x="69.8755" y="233.589" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">-80</text>
+<text fill="#000000" x="69.8755" y="183.291" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">-60</text>
+<text fill="#000000" x="69.8755" y="132.994" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">-40</text>
+<text fill="#000000" x="69.8755" y="82.6971" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">-20</text>
+<text fill="#000000" x="69.8755" y="32.4" font-size="14" text-anchor="end" baseline-shift="-7" font-family="Helvetica">0</text>
+<text fill="#000000" x="298.08" y="404.481" font-size="14" text-anchor="middle" baseline-shift="-14" font-family="Helvetica">Frequency (Hz)</text>
+<text fill="#000000" x="40.8755" y="208.44" font-size="14" transform="rotate(-90, 40.8755, 208.44)" text-anchor="middle" baseline-shift="0" font-family="Helvetica">Amplitude (dB)</text>
+<text fill="#000000" x="298.08" y="22.4" font-size="14" text-anchor="middle" baseline-shift="0" font-family="Helvetica">RC Filter Output</text>
+<polyline fill="none" stroke="#0000ff" stroke-width="3" points="74.88,32.4431 74.88,32.4681 74.88,32.5078 74.88,32.5703 74.88,32.6687 74.88,32.8229 74.88,33.0629 74.88,33.4327 74.88,33.9943 74.88,34.8292 74.8801,36.0341 74.8801,37.7073 74.8801,39.9248 74.8801,42.7163 74.8801,46.0542 74.8801,49.8636 74.8802,54.0467 74.8802,58.5062 74.8803,63.1605 74.8804,67.9463 74.8804,72.8193 74.8806,77.7491 74.8807,82.7153 74.8809,87.7045 74.8811,92.7088 74.8814,97.7224 74.8818,102.742 74.8822,107.765 74.8828,112.791 74.8835,117.818 74.8845,122.846 74.8856,127.875 74.8871,132.904 74.8889,137.933 74.8912,142.963 74.8941,147.992 74.8978,153.022 74.9024,158.051 74.9082,163.081 74.9155,168.111 74.9246,173.14 74.9362,178.17 74.9507,183.2 74.9691,188.23 74.9921,193.259 75.0211,198.289 75.0577,203.319 75.1037,208.348 75.1617,213.378 75.2346,218.408 75.3264,223.438 75.442,228.467 75.5875,233.497 75.7707,238.527 76.0013,243.556 76.2916,248.586 76.6572,253.616 77.1173,258.646 77.6966,263.675 78.4259,268.705 79.344,273.735 80.4998,278.764 81.955,283.794 83.7868,288.825 86.093,293.855 88.9964,298.884 92.6515,303.914 97.253,308.944 103.046,313.973 110.339,319.003 119.52,324.033 131.078,329.063 145.63,334.092 163.948,339.122 187.011,344.152 216.044,349.181 252.595,354.211 298.61,359.241 356.539,364.271 429.468,369.3 521.28,374.33"/>
+</g>
+</svg>

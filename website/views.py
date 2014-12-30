@@ -47,6 +47,10 @@ def anyPost(post):
 	else:
 		return pageNotFound(404)
 
+@app.route('/contact')
+def contact():
+	return render_template('contact.html')
+
 @app.route('/blogtest')
 def blogex():
     return render_template('index.html')

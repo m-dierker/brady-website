@@ -6,8 +6,12 @@
 	"date": "12/28/14",
 
 	"body": "<p class=\"post-description-body\">
-				Most of the circuits I build are battery powered. Batteries generate power due to a bunch of <a href=\"http://en.wikipedia.org/wiki/Galvanic_cell\">black magic</a> chemistry. In an ideal world, the battery would provide a constant DC voltage as labeled, be it 1.5V for AA type or 9V for D type. While they do certainly generate that DC level, they also tend to have some higher frequency noise. This comes about as a result of the random walk nature of the electrons colliding and forming a potential. What that really means for us, however, is that we don't get that perfect DC line of voltage that we were hoping for. Instead, it's a fuzzy line with some definite high frequency noise that we would love to remove.
+				Most of the circuits I build are battery powered. Batteries generate power due to a bunch of <a href=\"http://en.wikipedia.org/wiki/Galvanic_cell\">black magic</a> chemistry. In an ideal world, the battery would provide a constant DC voltage as labeled, be it 1.5V for AA type or 9V for D type. While they do certainly generate that DC level, they also tend to have some higher frequency noise. This comes about as a result of the random walk nature of the electrons colliding and forming a potential. What that really means for us, however, is that we don't get that perfect DC line of voltage that we were hoping for. Instead, it's a fuzzy line with some definite high frequency noise that we would love to remove. Shown below is the blue output we'll probably get, and the red output being ideal.
+            </p>
 
+            <img src=\"{{ url_for('static', filename='images/plots/dc-noise.svg') }}\">
+            
+            <p class=\"post-description-body\">
                 The easiest way to do that is to design some kind of circuit that will remove all that high frequency noise from the circuit so we only get our ideal DC wave out. To do that, we'll use a capacitor to block all that noise from our output, and leave it somewhere else. The impedance of a capacitor isn't linear like a resistor, but instead follows an inverse curve that is dependent on frequency (in radians):
 
                 \\[Z_C = \\dfrac{1}{jwC} \\text{, where } j = \\sqrt{-1}\\text{, } w_{rad}=2\\pi f_{Hz} \\]
@@ -17,10 +21,11 @@
                 \\[ \\lim_{w \\rightarrow 0} Z_C  = \\dfrac{1}{0} \\approx \\infty \\]
                 \\[ \\lim_{w \\rightarrow \\infty} Z_C  = \\dfrac{1}{\\infty} \\approx 0 \\]
             </p>
+
             <img class=\"post-image\" src=\"{{ url_for('static', filename = 'images/schematics/rc-filter.svg') }}\">
 
             <p class=\"post-description-body\">
-                Now the solution to Vout takes the same form as the <a href=\"resistor-divider\">resistor divider</a>, but instead of using resistances, we now use impedances. For a resistor, the impedance is the same as the resistance. The equation now modifies to:
+                The solution to Vout takes the same form as the <a href=\"resistor-divider\">resistor divider</a>, but instead of using resistances, we now use impedances. For a resistor, the impedance is the same as the resistance. The equation now modifies to:
 
                 \\[ \\dfrac{Vout}{Vin} = \\dfrac{\\frac{1}{jwC}}{\\frac{1}{jwC}+R} = \\dfrac{1}{1+jwRC} \\]
 
@@ -38,5 +43,32 @@
             </p>
 
             <img src=\"{{ url_for('static', filename='images/plots/rc-filter.svg') }}\">
+
+            <p class=\"post-description-body\">
+                We can see it's flat up to a certain point, then falls off at the expected 20dB / decade rate. Most people know the point as being \\( 1 / RC \\), but not the derivation behind it. Rather than solve that point where it starts to fall off, we'll solve for an easier one: the 3dB point is where we hit half power, or \\(V_{out} = V_{in} / \\sqrt{2} \\):
+
+                \\[ 
+                \\dfrac{1}{\\sqrt{2}} = \\left| \\dfrac{1}{1+jwRC} \\right| 
+                = \\left| \\dfrac{1}{1+jwRC} \\cdot \\dfrac{1-jwRC}{1-jwRC} \\right|
+                = \\left| \\dfrac{1-jwRC}{1+(wRC)^2} \\right| 
+                \\]
+
+                \\[
+                \\dfrac{1}{\\sqrt{2}} = \\sqrt{ \\left( \\dfrac{1}{1+(wRC)^2} \\right)^2 + \\left( \\dfrac{wRC}{1+(wRC)^2} \\right)^2}
+                = \\sqrt{ \\dfrac{1}{1+(wRC)^2}}
+                \\]
+
+                \\[ \\dfrac{1}{2} = \\dfrac{1}{1+(wRC)^2} \\]
+                \\[ 2 = 1+(wRC)^2 \\]
+                \\[ 1 = (wRC)^2 = wRC \\]
+
+                \\[
+                1/RC = w
+                \\]
+
+                Exactly as expected!
+            </p>
+
+
             "
 }

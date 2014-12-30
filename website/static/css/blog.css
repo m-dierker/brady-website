@@ -81,6 +81,9 @@ h3 {
     /*background: rgb(18, 132, 63);*/
 }
 .nav-item a {
+    width: 120px;
+    height: 35px;
+    margin: 5px;
     background: rgb(18, 132, 63);
     color: #fff;
     margin-top: 1em;
