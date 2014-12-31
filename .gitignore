@@ -10,3 +10,6 @@ venv/
 
 # no need for swps
 *.swp
+
+# ignore PyCharm file
+.idea/
