@@ -1,6 +1,6 @@
-from website import app, db
-from flask.ext.sqlalchemy import SQLAlchemy
 from datetime import datetime
+
+from website import db
 
 
 class Post(db.Model):
