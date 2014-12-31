@@ -1,11 +1,11 @@
-import sys
-import os
 import json
-from website import app
-from flask import Flask, render_template, url_for, render_template_string
+from operator import itemgetter
+
+from flask import render_template, render_template_string
+
 from models import *
 from prettifySPICE import *
-from operator import itemgetter
+
 
 # don't use models.Post, use Post
 # don't forget to check permissions
