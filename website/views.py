@@ -10,6 +10,8 @@ from prettifySPICE import *
 
 # don't use models.Post, use Post
 # don't forget to check permissions
+from website import app
+
 
 @app.route('/index')
 @app.route('/index.html')
