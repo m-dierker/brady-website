@@ -18,11 +18,14 @@ from prettifySPICE import *
 def home():
     jsonPosts = getPostsJSON()
 
-    jsonPosts = sorted(jsonPosts, key=itemgetter('date'))
-    jsonPosts = jsonPosts[::-1][:3]  # apparently it reverses a list
+    jsonPosts = sorted(jsonPosts, key=itemgetter('date'), reverse=True)
+
+    # oh my god what is this atrocity  --mdierker
+    # jsonPosts = jsonPosts[::-1][:3]  # apparently it reverses a list
+    # I can't live with myself if this stays here.
 
     # return ' '.join(urls)
-    return render_template('home.html', title='Home', posts=jsonPosts)
+    return render_template('home.html', title='Home', posts=jsonPosts[:3])
 
 
 @app.route('/post/<post>')
@@ -46,11 +49,18 @@ def anyCategory(cat):
     jsonPosts = getPostsJSON()
     validCat = ['passive', 'analog', 'power', 'digital', 'mixed-signal', 'rf']
 
+    dates = []
+    titles = []
+    urls = []
+
     if cat in validCat:
-        # yes dierker shut up i'll one line this later (lol no i won't)
-        dates = [d['date'] for d in jsonPosts if d['category'] == cat]
-        titles = [t['title'] for t in jsonPosts if t['category'] == cat]
-        urls = [u['url'] for u in jsonPosts if u['category'] == cat]
+        # Fixed that for you b$ --mdierker
+        for post in jsonPosts:
+            if post['category'] == cat:
+                dates.append(post['date'])
+                titles.append(post['title'])
+                urls.append(post['url'])
+
         return render_template('categories.html', title=cat.title(), dates=dates, titles=titles,
                                urls=urls, zip=zip)
     else:
@@ -64,6 +74,7 @@ def topics():
     jsonPosts = sorted(jsonPosts, key=itemgetter('date'))
     jsonPosts = jsonPosts[::-1]  # apparently it reverses a list
 
+    # oh my god, you did it here
     dates = [d['date'] for d in jsonPosts]
     titles = [t['title'] for t in jsonPosts]
     urls = [u['url'] for u in jsonPosts]
